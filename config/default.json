@@ -1,3 +1,8 @@
 {
+<<<<<<< HEAD
     "mongoURI": "mongodb://127.0.0.1/my_database"
 }
+=======
+    "mongoURI":"mongodb+srv://uchenry:okeyijoma21@cluster0.bg2sx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+}
+>>>>>>> 1d15ae8ae3db33deddc9e999273f7cac03e957fd

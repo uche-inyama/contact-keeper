@@ -5,7 +5,7 @@ const connectDB = require('./config/db');
 
 connectDB();
 
-const app = express();
+// Connect to Database
 
 app.get('/', (req, res) => res.json({
   msg: 'welcome...'
