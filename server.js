@@ -1,11 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+
 const PORT = process.env.PORT || 4000;
 const connectDB = require('./config/db');
 
-connectDB();
 
 // Connect to Database
+connectDB();
+
+const app = express();
+
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.json({
   msg: 'welcome...'
