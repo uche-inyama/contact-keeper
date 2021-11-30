@@ -26,7 +26,7 @@ router.get('/', auth, async (req, res) => {
 router.post('/', [
   body('email', 'Please include a valid email').isEmail(),
   body('password', 'Password is required').exists()
-], 
+],
 async (req, res) => {
   const errors = validationResult(req);
   if(!errors.isEmpty()){
@@ -61,7 +61,7 @@ async (req, res) => {
         if (err) throw err;
         res.json({ token })
       }
-     )
+    )
   } catch (error) {
     console.error(err.message);
     res.status(500).send('Server Error');
