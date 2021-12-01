@@ -2,9 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
 
-
 const PORT = process.env.PORT || 4000;
-
 
 // Connect to Database
 connectDB();
