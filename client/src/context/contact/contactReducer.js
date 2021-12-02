@@ -10,7 +10,7 @@ import {
   REMOVE_ALERT
 } from './types';
 
-export default (state, action) => {
+const contactReducer = (state, action) => {
   switch(action.type) {
     case ADD_CONTACT:
       return {
@@ -39,7 +39,22 @@ export default (state, action) => {
         ...state,
         current: null
       }
+    case FILTER_CONTACTS:
+      return {
+        ...state,
+        filtered: state.contacts.filter(contact => {
+          const regex = new RegExp(`${action.payload}`, 'gi');
+          return contact.name.match(regex) || contact.email.match(regex);
+        })
+      }
+    case CLEAR_FILTER:
+      return {
+        ...state,
+        filtered: null
+      }
     default:
       return state;
   }
 }
+
+export default contactReducer;

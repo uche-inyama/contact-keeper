@@ -6,12 +6,14 @@ import ContactForm from './ContactForm';
 const Contacts = () => {
   const contactContext = useContext(ContactContext);
 
-  const { contacts } = contactContext;
+  const { contacts, filtered } = contactContext;
 
   return (
     <Fragment>
-      <ContactForm />
-      {contacts.map(contact => (
+       <ContactForm />
+      {filtered !== null ? filtered.map(contact => (
+         <ContactItem key={contact.id} contact={contact}/>
+       )) : contacts.map(contact => (
         <ContactItem key={contact.id} contact={contact} />
       ))}
     </Fragment>
