@@ -8,7 +8,7 @@ import {
   CLEAR_FILTER,
   SET_ALERT,
   REMOVE_ALERT
-} from './types';
+} from '../types';
 
 const contactReducer = (state, action) => {
   switch(action.type) {

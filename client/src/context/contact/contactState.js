@@ -12,7 +12,7 @@ import {
 	CLEAR_FILTER,
 	SET_ALERT,
 	REMOVE_ALERT
-} from './types';
+} from '../types';
 
 const ContactState = props => {
 	const initialState = {
