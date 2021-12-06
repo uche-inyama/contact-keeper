@@ -9,6 +9,7 @@ const User = require('../models/User');
 // @route    POST api/users
 // @desc     Register a user
 // @access   Public 
+
 router.post('/', [
   body('name', 'Please enter your name').not().isEmpty(),
   body('email', 'Please include a valid email').isEmail(),
@@ -26,7 +27,7 @@ router.post('/', [
    try {
      let user = await User.findOne({ email });
      if(user){
-       return res.status(400).json({ msg: 'User already exits' })
+      return res.status(400).json({ msg: 'User already exits' })
      }
 
      user = new User({ 
@@ -59,5 +60,10 @@ router.post('/', [
       res.status(500).send('Server error'); 
    }
 });
+
+// @route    GET api/users
+// @desc     Load users
+// @access   Public 
+
 
 module.exports = router;

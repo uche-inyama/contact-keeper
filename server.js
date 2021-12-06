@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
+const cors = require('cors') 
 
 const PORT = process.env.PORT || 4000;
 
@@ -8,6 +9,8 @@ const PORT = process.env.PORT || 4000;
 connectDB();
 
 const app = express();
+
+app.use(cors());
 
 app.use(bodyParser.json());
 
