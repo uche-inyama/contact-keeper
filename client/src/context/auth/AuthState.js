@@ -9,7 +9,8 @@ import {
   USER_LOADED, 
   AUTH_ERROR,
   LOGIN_SUCCESS,
-  LOGIN_FAIL 
+  LOGIN_FAIL,
+  LOGOUT 
 } from '../types';
 import setAuthToken from '../../utils/setAuthToken';
 
@@ -83,7 +84,7 @@ const AuthState = props => {
     }
   };
 
-  const logout = () => console.log('logout');
+  const logout = () => dispatch({ type: LOGOUT });
 
   const clearErrors = () => dispatch({ type: CLEAR_ERRORS })
 
