@@ -15,7 +15,7 @@ const ContactForm = () => {
 
   const { name, email, phone, type } = contact;
 
-  const { addContact, clearCurrent, updateContact, current } = contactContext;
+  const { addContact, clearCurrent, updateContact, current, getContacts } = contactContext;
 
 
   useEffect(() => {
