@@ -47,7 +47,6 @@ const ContactState = props => {
 				'Content-Type': 'application/json'
 			}
 		}
-
 		try {
 			const res = await axios.post('http://localhost:4000/api/contacts', contact, config);
 			dispatch({ 
@@ -59,8 +58,20 @@ const ContactState = props => {
 		}
 	}
 
-	const deleteContact = (id) => {
-    dispatch({ type: DELETE_CONTACT, payload: id});
+	const deleteContact = async (id) => {
+		try {
+			await axios.delete(`http://localhost:4000/api/contacts/${id}`)
+			dispatch({ 
+				type: DELETE_CONTACT,
+				payload: id
+			});
+		} catch (err) {
+			dispatch({ 
+				type: CONTACT_ERROR,
+				payload: err.response.msg
+			});
+		}
+   
   }
 	
 	const setCurrent = contact => {
