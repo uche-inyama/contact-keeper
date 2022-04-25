@@ -9,6 +9,10 @@ import ContactState from './context/contact/contactState';
 import AuthState from './context/auth/AuthState';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import Rockets from './components/pages/rockets';
+import Missions from './components/pages/missions';
+import Dragons from './components/pages/dragons';
+import Profile from './components/pages/profile';
 import AlertState from './context/alert/AlertState';
 import Alerts from './components/layouts/Alerts'
 import setAuthToken from './utils/setAuthToken';
@@ -32,6 +36,10 @@ const App = () => {
                 <Route exact path ='/' element={<PrivateRoute />}>
                   <Route exact path='/' element={<Home />} />
                 </Route>
+                <Route exact path='/profile' element={<Profile />} />
+                <Route exact path='/rockets' element={<Rockets />}/>
+                <Route exact path='/missions' element={<Missions />}/>
+                <Route exact path='/dragons' element={<Dragons />}/>
                 <Route exact path='/about' element={<About />} />
                 <Route exact path='/register' element={<Register />} />
                 <Route exact path='/Login' element={<Login />}/>
