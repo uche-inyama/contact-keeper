@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import Contacts from '../contacts/Contacts'
-import ContactFilter from '../contacts/ContactFilter';
-import ContactForm from '../contacts/ContactForm';
+// import Contacts from '../contacts/Contacts'
+// import ContactFilter from '../contacts/ContactFilter';
+// import ContactForm from '../contacts/ContactForm';
 import AuthContext from '../../context/auth/authContext';
+import Rockets from '../pages/rockets';
+
 
 const Home = () => {
   const authContext = useContext(AuthContext);
@@ -12,13 +14,9 @@ const Home = () => {
     // eslint-disable-next-line
   }, []);
 	return (
-		<div className="Home grid-2">
+		<div className="Home">
       <div>
-        <ContactForm />
-      </div>
-      <div>
-        <ContactFilter />
-        <Contacts />
+        <Rockets />
       </div>
     </div>
 	);
