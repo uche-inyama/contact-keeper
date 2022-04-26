@@ -8,7 +8,6 @@ export const fetchDragons = createAsyncThunk('spaceX/getDragons', async () => {
       delete headers.common['x-auth-token']
     }
   })
-  console.log(response.data)
   return response.data
 })
 
@@ -19,7 +18,7 @@ const initialState = {
 }
 
 const dragonSlice = createSlice({
-  name: 'drqgons',
+  name: 'dragons',
   initialState: initialState,
   reducers: {},
   extraReducers(builder) {
@@ -29,7 +28,7 @@ const dragonSlice = createSlice({
       })
       .addCase(fetchDragons.fulfilled, (state, action) => {
         state.status = 'succeeded'
-        state.dragons = action.payload
+        state.dragons = state.dragons.concat(action.payload)
       })
       .addCase(fetchDragons.rejected, (state, action) => {
         state.status = 'failed'

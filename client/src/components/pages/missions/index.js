@@ -4,11 +4,11 @@ import { fetchMissions } from './missionSlice';
 
 
 const Mission = () => {
-  const missionsData = useSelector((state) => state.missions.missions);
+  const missionsData = useSelector((state) => state.missions);
   const { status, missions, error } = missionsData;
 
   const dispatch = useDispatch();
-  // console.log(missionsData)
+  console.log(missionsData)
 
   useEffect(() => {
     dispatch(fetchMissions())

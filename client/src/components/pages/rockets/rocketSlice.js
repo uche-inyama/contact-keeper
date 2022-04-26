@@ -8,7 +8,6 @@ export const fetchRockets = createAsyncThunk('spaceX/getRockets', async () => {
       delete headers.common['x-auth-token']
     }
   })
-  console.log(response.data)
   return response.data
 })
 
@@ -29,7 +28,7 @@ const rocketsSlice = createSlice({
       })
       .addCase(fetchRockets.fulfilled, (state, action) => {
         state.status = 'succeeded'
-        state.rockets = action.payload
+        state.rockets = state.rockets.concat(action.payload)
       })
       .addCase(fetchRockets.rejected, (state, action) => {
         state.status = 'failed'
