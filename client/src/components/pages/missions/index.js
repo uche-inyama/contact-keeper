@@ -8,10 +8,10 @@ const Mission = () => {
   const { status, missions, error } = missionsData;
 
   const dispatch = useDispatch();
-  console.log(missionsData)
+  console.log(missions)
 
   useEffect(() => {
-    dispatch(fetchMissions())
+    if (!missions.length) dispatch(fetchMissions())
   }, [])
 
   if(status === 'idle' || status === 'loading'){

@@ -28,7 +28,7 @@ const rocketsSlice = createSlice({
       })
       .addCase(fetchRockets.fulfilled, (state, action) => {
         state.status = 'succeeded'
-        state.rockets = state.rockets.concat(action.payload)
+        state.rockets = action.payload
       })
       .addCase(fetchRockets.rejected, (state, action) => {
         state.status = 'failed'

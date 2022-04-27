@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios'
 
-
 export const fetchDragons = createAsyncThunk('spaceX/getDragons', async () => {
   const response = await axios.get('https://api.spacexdata.com/v3/dragons',{
     transformRequest: (_, headers) => { 
@@ -28,7 +27,7 @@ const dragonSlice = createSlice({
       })
       .addCase(fetchDragons.fulfilled, (state, action) => {
         state.status = 'succeeded'
-        state.dragons = state.dragons.concat(action.payload)
+        state.dragons = action.payload
       })
       .addCase(fetchDragons.rejected, (state, action) => {
         state.status = 'failed'

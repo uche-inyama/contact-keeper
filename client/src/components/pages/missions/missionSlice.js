@@ -28,7 +28,7 @@ const missionSlice = createSlice({
       })
       .addCase(fetchMissions.fulfilled, (state, action) => {
         state.status = 'succeeded'
-        state.missions = state.missions.concat(action.payload) 
+        state.missions = action.payload
       })
       .addCase(fetchMissions.rejected, (state, action) => {
         state.status = 'failed'

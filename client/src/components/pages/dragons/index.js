@@ -8,7 +8,7 @@ const Dragons = () => {
   const { status, dragons, error } = dragonsData
   const dispatch = useDispatch();
 
-  console.log(dragonsData)
+  console.log(dragons)
   useEffect(() => {
     if (!dragons.length) dispatch(fetchDragons())
   },[])
